@@ -1,0 +1,373 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="mHealth.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <phone:Panorama>
+            <phone:Panorama.Background>
+                <ImageBrush ImageSource="/images/mac.jpg"/>
+            </phone:Panorama.Background>
+            
+            <!--Inicio Cabecera-->
+            <phone:Panorama.Title>
+                    <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+                        <Image Source="/images/logohacka.png" Height="180" Margin="0 15"/>
+                        <StackPanel Orientation="Vertical" Margin="20 0">
+                            <TextBlock Text="#mHealthColombia" FontSize="70" Margin="0 40" HorizontalAlignment="Center"/>
+                            <TextBlock Text="8 - 14 Junio" FontSize="40" Margin="0 -40" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+            </phone:Panorama.Title>
+            <!--Fin Cabecera-->
+
+            <!--Inicio pantalla inicial-->
+            <phone:PanoramaItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Inicio Sponsors-->
+                    <Canvas Grid.Row="0" Grid.ColumnSpan="2" Margin="-15 -40 0 20">
+                        <Rectangle Fill="#D6D6C2" Opacity="0.7" Width="395" Height="95" Canvas.Left="30" Canvas.Top="-25" Canvas.ZIndex="0"/>
+                        <Grid Canvas.Top="-20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" >
+                                <Image Source="/Images/Sponsor/mit_logo.png" Height="50" Margin="40 0" />
+                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="40 0"/>
+                                <Image Source="/Images/Sponsor/csail_logo.png" Height="50" Margin="60 0"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="67 0 20 0" />
+                                <Image Source="/Images/Sponsor/imes_logo.png" Height="50" Margin="45 0 20 0"/>
+                            </StackPanel>
+                        </Grid>
+
+                    </Canvas>
+
+                    <!--Fin Sponsors-->
+
+                    <!--Inicio Etapas-->
+                    <Canvas Grid.Row="1" Grid.Column="0">
+                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
+                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+                            <Image Source="/images/step1.png" Height="150" Tap="IrActividades" Margin="0 3"/>
+                            <TextBlock Text="Entrenamiento" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center" Tap="IrActividades"/>
+                        </StackPanel>
+                    </Canvas >
+
+                    <Canvas Grid.Row="1" Grid.Column="1">
+                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
+                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+                            <Image Source="/images/step2.png" Height="150" Margin="0 3"/>
+                            <TextBlock Text="Hackaton" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Canvas>
+
+
+                    <Canvas Grid.Row="2" Grid.Column="0">
+                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
+                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+                            <Image Source="/images/step3.png" Height="150" Margin="0 3"/>
+                            <TextBlock Text="Curso Sana" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center"/>
+                        </StackPanel>
+
+                    </Canvas>
+
+                    <Canvas Grid.Row="2" Grid.Column="1">
+                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
+                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+                            <Image Source="/images/step4.png" Height="150" Margin="0 3"/>
+                            <TextBlock Text="Incubadora" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Canvas>
+
+                    <!--Fin Etapas-->
+                </Grid>
+            </phone:PanoramaItem>
+            <!--Fin pantalla inicial-->
+
+            <!--Inicio Información-->
+            <phone:PanoramaItem Margin="0 -40">
+                <phone:PanoramaItem.Header>
+                    Información
+                </phone:PanoramaItem.Header>
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="#860000"/>
+                </phone:PanoramaItem.Foreground>
+
+
+                <Grid Margin="0 -30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Canvas Grid.Row="0">
+                        <Rectangle Fill="#D6D6C2" Opacity="0.68" Width="440" Height="495" Canvas.Left="0" Canvas.ZIndex="0"/>
+                        <Grid Canvas.Top="40">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="330"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <RichTextBox  Grid.Column="0" Foreground="#FF6600" FontWeight="SemiBold" TextWrapping="Wrap" FontSize="23" TextAlignment="Justify" Margin="-5 -40 0 0">
+                                <Paragraph>
+                                    Sana lidera un enfoque para mejorar la salud mundial, 
+                            aprovecha la tecnología para superar las limitaciones, impulsa
+                            la mejora de la calidad y promueve la innovación sostenible a nivel local.
+                                </Paragraph>
+                            </RichTextBox>
+
+                            <Image Grid.Column="1" Source="/images/sana-logo.png" Width="110" Margin="0 0 0 70"/>
+                        </Grid>
+                    </Canvas>
+
+
+                    <Grid Grid.Row="1" Margin="0 -10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="/images/logohacka.png" Width="120" Margin="0 0 0 120"/>
+                        <RichTextBox  Grid.Column="1" Foreground="#7A2900" TextWrapping="Wrap" FontWeight="SemiBold"  FontSize="23" TextAlignment="Justify" Margin="0 -110 0 0">
+                            <Paragraph>
+                                Promueve la innovación local sostenible en salud, con la cooperación del Microsoft
+                                Mobile Lab Colombia apoyando la creación de contenidos digitales para dispositivos 
+                                móviles.
+                            </Paragraph>
+                        </RichTextBox>
+
+                    </Grid>
+
+                </Grid>
+
+            </phone:PanoramaItem>
+            <!--Fin Información-->
+
+            <!--Inicio Noticias-->
+            <phone:PanoramaItem Margin="0 -40" >
+                <phone:PanoramaItem.Header>
+                    Noticias
+                </phone:PanoramaItem.Header>
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="#860000"/>
+                </phone:PanoramaItem.Foreground>
+                <Grid>
+                    <Grid.Resources>
+                        <DataTemplate x:Key="tweetlist">
+
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,0,0,10"
+                                        >
+                                <Image Height="50" Width="50" 
+                                            VerticalAlignment="Top" Margin="0,7,7,0"
+                                             Source="/Images/creatic.jpg">
+                                </Image>
+
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding CreatedDate}" FontSize="25" 
+                                         Foreground="{StaticResource PhoneAccentBrush}" VerticalAlignment="Top"/>
+
+                                    <TextBlock Text="{Binding Text}" TextWrapping="Wrap" FontSize="20" Foreground="#860000"
+                                         VerticalAlignment="Top"
+                                        />
+                                </StackPanel>
+
+
+                                <!-- </Grid> -->
+                            </StackPanel>
+                        </DataTemplate>
+                    </Grid.Resources>
+
+                    <phone:LongListSelector              
+                             Margin="0,60,0,0"
+                             ItemTemplate="{StaticResource tweetlist}"
+                             x:Name="tweetList">
+                    </phone:LongListSelector>
+
+                </Grid>
+                            
+                            
+                                
+                                    
+                               <!--<Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                
+                                <Image Height="50" Width="50" Grid.Column="0" Grid.Row="0"
+                                            VerticalAlignment="Top" Margin="0,7,7,0"
+                                            Grid.RowSpan="2" Source="/Images/creatic.jpg">
+                                        </Image>
+                                    
+                                       <TextBlock Text="{Binding CreatedDate}" FontSize="25" Grid.Row="0"  Grid.Column="1"
+                                         Foreground="{StaticResource PhoneAccentBrush}" VerticalAlignment="Top"/>
+
+                                        <TextBlock Text="{Binding Text}" TextWrapping="Wrap" FontSize="20" Foreground="#860000"
+                                        Grid.Row="1" Grid.Column="1"
+                                        VerticalAlignment="Top"
+                                        />
+                                -->
+                               
+                          
+                               
+                   
+
+                   
+
+                    <!--inicio de twitter-->
+                        
+                       
+                        
+
+
+                        <!--fin de twitter-->
+                   
+                
+
+            </phone:PanoramaItem>
+            <!--Fin Noticias-->
+
+            <!--Inicio Patrocinadores-->
+            <phone:PanoramaItem Margin="0 -40">
+                <phone:PanoramaItem.Header>
+                    Patrocinadores
+                </phone:PanoramaItem.Header>
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="#860000"/>
+                </phone:PanoramaItem.Foreground>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Canvas Grid.Row="0">
+                        <Rectangle Fill="#D6D6C2" Opacity="0.7" Width="400" Height="110" Canvas.Left="20" Canvas.Top="-3" Canvas.ZIndex="0"/>
+                        <StackPanel  Orientation="Horizontal" Margin="-10 50 0 0">
+                            <Image Source="/Images/Sponsor/mit_logo.png" Height="50" Margin="40 0" />
+                            <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="40 0"/>
+                            <Image Source="/Images/Sponsor/csail_logo.png" Height="50" Margin="60 0"/>
+                        </StackPanel>
+                    </Canvas>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="62 0 20 0" />
+                        <Image Source="/Images/Sponsor/imes_logo.png" Height="50" Margin="45 0 20 0"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="2" Foreground="#CC0000" FontWeight="Bold" Text="¡Se patrocinador!" FontSize="40" TextAlignment="Center" Margin="0 180 0 100 "/>
+                    <Grid Grid.Row="3" Margin="10 -80 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="/Images/Platinium.png" Width="120" Tap="IrPlatinium" />
+                        <Image Grid.Column="1" Source="/Images/Golden.png" Width="120" Tap="IrGolden"/>
+                        <Image Grid.Column="2" Source="/Images/Silver.png" Width="120" Tap="IrSilver"/>
+                    </Grid>
+                </Grid>
+
+            </phone:PanoramaItem>
+            <!--Fin Patrocinadores-->
+
+            <!--Inicio Mapa-->
+            <phone:PanoramaItem Margin="0 -40">
+                <phone:PanoramaItem.Header>
+                    Ubicación
+                </phone:PanoramaItem.Header>
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="#860000"/>
+                </phone:PanoramaItem.Foreground>
+                <Controls:Map Center="2.434287, -76.613922" ZoomLevel="16" Height="450" Margin="0 -100 0 0"/>
+            </phone:PanoramaItem>
+            <!--Fin Mapa-->
+
+            <!--Inicio Contacto-->
+            <phone:PanoramaItem Margin="0 -40">
+                <phone:PanoramaItem.Header>
+                    Contacto
+                </phone:PanoramaItem.Header>
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="#860000"/>
+                </phone:PanoramaItem.Foreground>
+                <Grid Margin="0 -10" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="325"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    
+                    <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0 -30">
+                        <TextBlock Text="Pregúntanos" TextAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
+                        <TextBox Height="120"/>
+                        <TextBlock Text="Correo" TextAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
+                        <TextBox/>
+                        <Button Content="Enviar" Width="150" Foreground="#FF0D00"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <Ellipse  Height="90" Width="90">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/images/creatic.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Text="(57 2) 3188217111" TextAlignment="Center" FontSize="22" FontWeight="SemiBold" Foreground="#FF6600"/>
+                        <TextBlock Text=" 8377601" TextAlignment="Center" FontSize="22" FontWeight="SemiBold" Foreground="#FF6600"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Grid.Row="1" >
+                        <Ellipse Height="90" Width="90">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/images/twitter.png"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Text="@ClusterCreaTIC" TextAlignment="Center" FontSize="22" FontWeight="SemiBold" Foreground="#FF6600"/>
+                    </StackPanel>
+                    
+
+                </Grid>
+                
+            </phone:PanoramaItem>
+            <!--Fin Contacto-->
+            
+        </phone:Panorama>
+
+        
+    </Grid>
+
+</phone:PhoneApplicationPage>

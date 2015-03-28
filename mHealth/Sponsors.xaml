@@ -1,0 +1,234 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="mHealth.Sponsors"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/mac-1.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Inicio Cabecera-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/logohacka.png" Height="180"/>
+                <StackPanel>
+                    <TextBlock Text="mHealth" FontSize="60" Margin="30 0 0 0"/>
+                    <TextBlock Text="Colombia" FontSize="50" Margin="30 -25 0 0"/>
+                    <TextBlock Text="Junio 8-14" FontSize="18" HorizontalAlignment="Center" Margin="0 -8 0 0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <!--Fin Cabecera-->
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,-35,12,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Inicio Beneficios-->
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <TextBlock HorizontalAlignment="Center" Foreground="#860000"  FontSize="35" FontWeight="Bold" Margin="0 0 0 15">
+                    Beneficios
+                </TextBlock>
+
+                <Border Opacity="0.7"  Background="#B35252">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap">
+                    Apoyar activamente en la organización de la Hackathon.
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.7"  Background="#F7F7FA">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#B35252" FontSize="17" TextWrapping="Wrap">
+                    Contribuir con la definición de temas o retos.
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.7"  Background="#B35252">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                 Aportar un premio especial a los solucionadores.
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.7"  Background="#F7F7FA">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#B35252" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                Posicionamiento Premiun en la publicidad del evento.
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.9"  Background="#B35252">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                 Acceso y participación de futuros eventos (como organizador).
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.7"  Background="#F7F7FA">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#B35252" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                    Informes de gasto de sus recursos.
+                    </TextBlock>
+                </Border>
+
+
+                <Border Opacity="0.9"  Background="#B35252">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                    Patrocinador de todo el evento.
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.7"  Background="#F7F7FA">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" Foreground="#B35252" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                    Oportunidad de orientar una ponencia en el evento.
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.9"  Background="#B35252">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                Posibilidad de patrocinar una comida con su material publicitario.
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.7"  Background="#F7F7FA">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" Foreground="#B35252" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                    Oportunidad de patrocinar una comida con su material publicitario
+                    </TextBlock>
+                </Border>
+
+                <Border Opacity="0.9"  Background="#B35252">
+                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
+                    Número de asistentes de su compañia al evento.
+                    </TextBlock>
+                </Border>
+            </StackPanel>
+            <!--Fin Beneficios-->
+
+            <!--Inicio Pivote Opciones-->
+            <phone:Pivot x:Name="precios" Width="170" Grid.Column="1" Margin="-10 0 0 0">
+
+                <!--Inicio Platinium-->
+                <phone:PivotItem x:Name="platinum" Margin="0 20">
+                    <phone:PivotItem.Header >
+                        <StackPanel Orientation="Vertical" Margin="0 -10 0 0">
+                            <TextBlock Text="Platinium" FontSize="25" Foreground="#860000"  FontWeight="SemiBold"/>
+                            <TextBlock Text="$2000 USD" FontSize="20" Foreground="#860000"  FontWeight="Light" TextAlignment="Center"/>
+                        </StackPanel>
+                    </phone:PivotItem.Header>
+                    <StackPanel Margin="0 -15 0 0">
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Si</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 13">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">De 5 a 10</TextBlock>
+                    </StackPanel>
+                </phone:PivotItem>
+                <!--Fin Platinium-->
+
+                <!--Inicio Golden-->
+                <phone:PivotItem x:Name="gold">
+                    <phone:PivotItem.Header>
+                        <StackPanel Orientation="Vertical" Margin="0 -10 0 0">
+                            <TextBlock Text="Golden" Foreground="#860000"  FontSize="25" FontWeight="SemiBold" TextAlignment="Center"/>
+                            <TextBlock Text="$1000 USD" Foreground="#860000"  FontSize="20" FontWeight="Light" TextAlignment="Center"/>
+                        </StackPanel>
+                    </phone:PivotItem.Header>
+
+                    <StackPanel Margin="0 -25 0 0">
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Si</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 13">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Solo 3</TextBlock>
+                    </StackPanel>
+
+                </phone:PivotItem>
+                <!--Fin Golden-->
+                
+                <!--Inicio Silver-->
+                <phone:PivotItem x:Name="silver">
+                    <phone:PivotItem.Header>
+                        <StackPanel Orientation="Vertical" Margin="0 -10 0 0">
+                            <TextBlock Text="Silver" Foreground="#860000" FontSize="25" FontWeight="SemiBold" TextAlignment="Center"/>
+                            <TextBlock Text="$500 USD" FontSize="20" Foreground="#860000"  FontWeight="Light" TextAlignment="Center"/>
+                        </StackPanel>
+                    </phone:PivotItem.Header>
+
+                    <StackPanel Margin="0 -25 0 0">
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">No</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Si</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 13">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Solo 2</TextBlock>
+                    </StackPanel>
+                </phone:PivotItem>
+                <!--Fin Silver-->                
+            </phone:Pivot>
+            <!--Fin Pivote Opciones-->
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
