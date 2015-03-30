@@ -14,6 +14,7 @@ using Windows.UI.Popups;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 
+
 namespace mHealth
 {
     public partial class MainPage : PhoneApplicationPage
@@ -51,8 +52,9 @@ namespace mHealth
         {
             NavigationService.Navigate(new Uri("/SponsorsPlata.xaml", UriKind.Relative));
         }
-        //Metodo para traer twits
 
+
+        //Metodo para traer twits
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -65,7 +67,7 @@ namespace mHealth
                 service.AuthenticateWith("435393700-T7HqdOi4eg2TKeDLwD9CA11vbpuKOYlQ5psVwFPb", "CsOG3mEZYB5rT3TcUHp3Wgi8lpQ8zCMp2GFsUTQbSzo3S");
 
                 //ScreenName is the profile name of the twitter user.
-                service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions() { ScreenName = "Ha_Urbano" }, (ts, rep) =>
+                service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions() { ScreenName = "ClusterCreaTic" }, (ts, rep) =>
                 {
                     if (rep.StatusCode == HttpStatusCode.OK)
                     {
@@ -80,9 +82,16 @@ namespace mHealth
             {
 
                 MessageBox.Show("Please check your internet connestion.");
+                
             }
 
         }
+
+       
+
+        //Metodo para enviar correos
+
+        
 
         
 
