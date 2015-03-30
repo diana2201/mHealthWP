@@ -159,29 +159,32 @@
 
             <!--Inicio Noticias-->
             <phone:PanoramaItem Margin="0 -40" >
-                <phone:PanoramaItem.Header>
+                <phone:PanoramaItem.Header >
                     Noticias
                 </phone:PanoramaItem.Header>
                 <phone:PanoramaItem.Foreground>
                     <SolidColorBrush Color="#860000"/>
                 </phone:PanoramaItem.Foreground>
                 <Grid>
-                    <Grid.Resources>
-                        <DataTemplate x:Key="tweetlist">
+                    <Grid.Resources >
+                        <DataTemplate x:Key="tweetlist" >
 
                             <StackPanel Orientation="Horizontal"
                                         Margin="0,0,0,10"
                                         >
                                 <Image Height="50" Width="50" 
                                             VerticalAlignment="Top" Margin="0,7,7,0"
-                                             Source="/Images/creatic.jpg">
+                                             Source="{Binding User.ProfileImageUrl}">
                                 </Image>
 
                                 <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="{Binding CreatedDate}" FontSize="25" 
+                                    <TextBlock Text="{Binding User.ScreenName}"  FontSize="20" TextWrapping="Wrap"
+                                         Foreground="{StaticResource PhoneAccentBrush}" VerticalAlignment="Top"/>
+                                    
+                                    <TextBlock Text="{Binding CreatedDate}"  FontSize="20" TextWrapping="Wrap"
                                          Foreground="{StaticResource PhoneAccentBrush}" VerticalAlignment="Top"/>
 
-                                    <TextBlock Text="{Binding Text}" TextWrapping="Wrap" FontSize="20" Foreground="#860000"
+                                    <TextBlock Text="{Binding Text}" Width="290" TextWrapping="Wrap" FontSize="20" Foreground="#860000"
                                          VerticalAlignment="Top"
                                         />
                                 </StackPanel>
@@ -199,10 +202,7 @@
                     </phone:LongListSelector>
 
                 </Grid>
-                            
-                            
-                                
-                                    
+                                 
                                <!--<Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
@@ -229,16 +229,9 @@
                                
                           
                                
-                   
-
-                   
-
                     <!--inicio de twitter-->
                         
                        
-                        
-
-
                         <!--fin de twitter-->
                    
                 
@@ -327,9 +320,16 @@
                     </Grid.RowDefinitions>
                     
                     <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0 -30">
+
                         <TextBlock Text="Pregúntanos" TextAlignment="Center" Margin="0 30 0 0" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
                         <TextBox Height="180" x:Name="msjcorreo"/>                        
                         <Button Content="Enviar" Width="150" Foreground="#FF0D00" Click="EnviarCorreo"/>
+              <TextBlock Text="Pregúntanos" TextAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
+                        <TextBox Height="120"/>
+                        <TextBlock Text="Correo" TextAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
+                        <TextBox/>
+                        <Button Content="Enviar" Width="150" Foreground="#FF0D00" />
+
                     </StackPanel>
 
                     <StackPanel Grid.Column="0" Grid.Row="1">
