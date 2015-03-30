@@ -72,39 +72,27 @@
                     <!--Fin Sponsors-->
 
                     <!--Inicio Etapas-->
-                    <Canvas Grid.Row="1" Grid.Column="0">
-                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
-                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10 60 0 0">
                             <Image Source="/images/step1.png" Height="150" Tap="IrActividades" Margin="0 3"/>
-                            <TextBlock Text="Entrenamiento" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center" Tap="IrActividades"/>
+                            <TextBlock Text="Entrenamiento" FontWeight="SemiBold" Margin="0 5" FontSize="24" TextAlignment="Center" Tap="IrActividades"/>
                         </StackPanel>
-                    </Canvas >
 
-                    <Canvas Grid.Row="1" Grid.Column="1">
-                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
-                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="10 60 0 0">
                             <Image Source="/images/step2.png" Height="150" Margin="0 3"/>
-                            <TextBlock Text="Hackaton" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center"/>
-                        </StackPanel>
-                    </Canvas>
+                            <TextBlock Text="Hackaton" FontWeight="SemiBold" Margin="0 5" FontSize="24" TextAlignment="Center"/>
+                    </StackPanel>
 
 
-                    <Canvas Grid.Row="2" Grid.Column="0">
-                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
-                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="10 30 0 0">
                             <Image Source="/images/step3.png" Height="150" Margin="0 3"/>
-                            <TextBlock Text="Curso Sana" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center"/>
-                        </StackPanel>
+                            <TextBlock Text="Curso Sana" FontWeight="SemiBold" Margin="0 5" FontSize="24" TextAlignment="Center"/>
+                   </StackPanel>
 
-                    </Canvas>
-
-                    <Canvas Grid.Row="2" Grid.Column="1">
-                        <Rectangle Canvas.Top="45" Canvas.Left="25" Fill="#CCCCB2" Opacity="0.6" Width="165" Height="200"/>
-                        <StackPanel Canvas.Top="50" Canvas.Left="30">
+                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="10 30 0 0">
                             <Image Source="/images/step4.png" Height="150" Margin="0 3"/>
-                            <TextBlock Text="Incubadora" FontWeight="SemiBold" Foreground="#333333" Margin="0 5" FontSize="24" TextAlignment="Center"/>
+                            <TextBlock Text="Incubadora" FontWeight="SemiBold" Margin="0 5" FontSize="24" TextAlignment="Center"/>
                         </StackPanel>
-                    </Canvas>
 
                     <!--Fin Etapas-->
                 </Grid>
@@ -128,13 +116,13 @@
                     </Grid.RowDefinitions>
 
                     <Canvas Grid.Row="0">
-                        <Rectangle Fill="#D6D6C2" Opacity="0.68" Width="440" Height="495" Canvas.Left="0" Canvas.ZIndex="0"/>
+                        <Rectangle Fill="#D6D6C2" Opacity="0.6" Width="400" Height="225" Canvas.Left="0" Canvas.ZIndex="0"/>
                         <Grid Canvas.Top="40">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="330"/>
+                                <ColumnDefinition Width="280"/>
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
-                            <RichTextBox  Grid.Column="0" Foreground="#FF6600" FontWeight="SemiBold" TextWrapping="Wrap" FontSize="23" TextAlignment="Justify" Margin="-5 -40 0 0">
+                            <RichTextBox  Grid.Column="0" Foreground="#FF3300" FontWeight="SemiBold" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify" Margin="-5 -40 0 0">
                                 <Paragraph>
                                     Sana lidera un enfoque para mejorar la salud mundial, 
                             aprovecha la tecnología para superar las limitaciones, impulsa
@@ -146,23 +134,24 @@
                         </Grid>
                     </Canvas>
 
-
-                    <Grid Grid.Row="1" Margin="0 -10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="/images/logohacka.png" Width="120" Margin="0 0 0 120"/>
-                        <RichTextBox  Grid.Column="1" Foreground="#7A2900" TextWrapping="Wrap" FontWeight="SemiBold"  FontSize="23" TextAlignment="Justify" Margin="0 -110 0 0">
-                            <Paragraph>
-                                Promueve la innovación local sostenible en salud, con la cooperación del Microsoft
+                    <Canvas Grid.Row="1" Margin="0 5 0 0">
+                        <Rectangle Fill="#B8B894" Opacity="0.5" Width="400" Height="225" Canvas.Top="-43" Canvas.Left="0" Canvas.ZIndex="0"/>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="280"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="/images/logohacka.png" Width="120" Margin="0 0 0 120"/>
+                            <RichTextBox  Grid.Column="1" Foreground="#990000"  TextWrapping="Wrap" FontWeight="SemiBold"  FontSize="20" TextAlignment="Justify" Margin="0 -110 0 0">
+                                <Paragraph>
+                                    Promueve la innovación local sostenible en salud, con la cooperación del Microsoft
                                 Mobile Lab Colombia apoyando la creación de contenidos digitales para dispositivos 
                                 móviles.
-                            </Paragraph>
-                        </RichTextBox>
-
-                    </Grid>
-
+                                </Paragraph>
+                            </RichTextBox>
+                        </Grid>
+                    </Canvas>
+                    
                 </Grid>
 
             </phone:PanoramaItem>
@@ -265,15 +254,17 @@
                 <phone:PanoramaItem.Foreground>
                     <SolidColorBrush Color="#860000"/>
                 </phone:PanoramaItem.Foreground>
+                
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition />
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Canvas Grid.Row="0">
+                    <!--Inicio patrocinadores-->
+                    <Canvas Grid.Row="0" Margin="0 30 0 0">
                         <Rectangle Fill="#D6D6C2" Opacity="0.7" Width="400" Height="110" Canvas.Left="20" Canvas.Top="-3" Canvas.ZIndex="0"/>
                         <StackPanel  Orientation="Horizontal" Margin="-10 50 0 0">
                             <Image Source="/Images/Sponsor/mit_logo.png" Height="50" Margin="40 0" />
@@ -281,13 +272,15 @@
                             <Image Source="/Images/Sponsor/csail_logo.png" Height="50" Margin="60 0"/>
                         </StackPanel>
                     </Canvas>
-
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
                         <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="62 0 20 0" />
                         <Image Source="/Images/Sponsor/imes_logo.png" Height="50" Margin="45 0 20 0"/>
                     </StackPanel>
-                    <TextBlock Grid.Row="2" Foreground="#CC0000" FontWeight="Bold" Text="¡Se patrocinador!" FontSize="40" TextAlignment="Center" Margin="0 180 0 100 "/>
-                    <Grid Grid.Row="3" Margin="10 -80 0 0">
+                    <!--Fin Patrocinadores-->
+                    
+                    <!--Inicio se patrocinador-->
+                    <TextBlock Grid.Row="2" Margin="0 130 0 0" Foreground="#FF0000" FontWeight="Bold" Text="¡Se patrocinador!" FontSize="40" TextAlignment="Center"/>
+                    <Grid Grid.Row="3" Margin="10 -100 0 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
@@ -297,6 +290,7 @@
                         <Image Grid.Column="1" Source="/Images/Golden.png" Width="120" Tap="IrGolden"/>
                         <Image Grid.Column="2" Source="/Images/Silver.png" Width="120" Tap="IrSilver"/>
                     </Grid>
+                    <!--Fin se patrocinador-->
                 </Grid>
 
             </phone:PanoramaItem>
@@ -333,11 +327,9 @@
                     </Grid.RowDefinitions>
                     
                     <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0 -30">
-                        <TextBlock Text="Pregúntanos" TextAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
-                        <TextBox Height="120"/>
-                        <TextBlock Text="Correo" TextAlignment="Center" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
-                        <TextBox/>
-                        <Button Content="Enviar" Width="150" Foreground="#FF0D00"/>
+                        <TextBlock Text="Pregúntanos" TextAlignment="Center" Margin="0 30 0 0" FontSize="30" FontWeight="SemiBold" Foreground="#FF0D00"/>
+                        <TextBox Height="180" x:Name="msjcorreo"/>                        
+                        <Button Content="Enviar" Width="150" Foreground="#FF0D00" Click="EnviarCorreo"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="0" Grid.Row="1">

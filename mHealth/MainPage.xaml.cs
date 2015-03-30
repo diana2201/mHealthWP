@@ -29,7 +29,6 @@ namespace mHealth
             //BuildLocalizedApplicationBar();
         }
 
-
         private void IrActividades(object sender, System.Windows.Input.GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Actividades.xaml", UriKind.Relative));
@@ -83,6 +82,29 @@ namespace mHealth
             }
 
         }
+
+        //private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, string messageBody)
+
+        private void EnviarCorreo(object sender, RoutedEventArgs e)
+        {
+            ComposeEmail();
+        }
+
+        //Inicio código enviar correo electrónico
+        private async void ComposeEmail()
+        {
+            var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
+            emailMessage.Body = msjcorreo.Text;
+            emailMessage.Subject = "Contacto mHealth";
+            var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient("dianasamboni22@gmail.com");
+            emailMessage.To.Add(emailRecipient);            
+            await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
+
+        }
+        //Fin enviar correo electrónico
+
+        
+
 
         
 
