@@ -45,116 +45,113 @@
                 <phone:PivotItem x:Name="Entrenamiento" >
 
                     <phone:PivotItem.Header>
-                        <TextBlock Text="Entrenamiento" Foreground="#860000" FontSize="50"/>
+                        <TextBlock Text="Entrenamiento" FontWeight="SemiBold" Foreground="#FF3300" FontSize="50"/>
                     </phone:PivotItem.Header>
                     
 
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
+                    <StackPanel Margin="0 20 0 0">
                         
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Grid.Column="0" Grid.Row="0" Source="/Images/step1.png" Height="150" Margin="0 10 0 10"/>
-                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="0 40" >
-                            <TextBlock Text="3 Días" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="#FF3300"/>
-                            <TextBlock Text="Junio 8,9,10" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" />
-                        </StackPanel>
-
-                        <RichTextBox  Grid.ColumnSpan="2" FontWeight="SemiBold" Foreground="#860800"  Grid.Row="1" TextAlignment = "justify"  IsReadOnly = "True" Margin="0 -70 0 0">
-                            <Paragraph>
-                                Programa intensivo para acelerar el aprendizaje en 
-                            información de la salud a nivel mundial, aprovechar recursos 
-                            globales de ingeniería y generar capacidades en mHealth. Se presentan 
-                            tecnologías móviles para salud a ingenieros informáticos y eléctricos, 
-                            acercándolos a la visión clínica para que puedan diseñar e implementar 
-                            con mayor eficacia soluciones móviles de salud.
-                            </Paragraph>
-                        </RichTextBox>
-                    </Grid>
+                        <TextBlock Text="3 Días - Junio 8,9,10" HorizontalAlignment="Center" FontSize="44" FontWeight="SemiBold" />
+                        
+                        <Canvas  Margin="0 30 0 0">
+                            <Rectangle Width="430" Height="330" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/entrenamiento.png" Margin="0 20 0 10"/>
+                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>                                
+                                        Programa integral e intensivo para los participantes, donde aprenderán 
+                                        sobre los principales problemas en salud, acercándolos a una visión 
+                                        clínica para orientarlos en el diseño e implementación efectiva soluciones móviles.
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
+                    </StackPanel>
                    
                 </phone:PivotItem>
                 <!--Fin Entrenamiento-->
 
                 <!--Inicio Hackaton-->
                 <phone:PivotItem x:Name="Hackaton" >
+
                     <phone:PivotItem.Header>
-                        <TextBlock Text="Hackaton" Foreground="#860000" FontSize="50"/>
+                        <TextBlock Text="Hackaton" FontWeight="SemiBold" Foreground="#FF3300" FontSize="50"/>
                     </phone:PivotItem.Header>
+                    
 
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Grid.Column="0" Grid.Row="0" Source="/Images/step2.png" Height="150" Margin="0 10 0 10"/>
-                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="0 40" >
-                            <TextBlock Text="2 Días" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="#FF3300"/>
-                            <TextBlock Text="Junio 13-14" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" />
-                        </StackPanel>
-
-                        <RichTextBox Grid.ColumnSpan="2" Grid.Row="1" FontWeight="SemiBold" Foreground="#860800"  TextAlignment = "justify"  IsReadOnly = "True" Margin="0 -70 0 0">
-                            <Paragraph>
-                                Evento que permite a los ingenieros aplicar inmediatamente
-                            los conceptos y lecciones en proyectos actuales, trabajar en equipos
-                            multidisciplinarios para desarrollar prototipos rápidos y resolver
-                            problemas reales. Los estudiantes de ingeniería son reunidos con médicos
-                            locales para compartir ideas e innovar para llevar así la teoría a la 
-                            práctica.
-                            </Paragraph>
-                        </RichTextBox>
-                    </Grid>
+                    <StackPanel Margin="0 0 0 0">
+                        
+                        <TextBlock Text="2 Días - Junio 13,14" HorizontalAlignment="Center" FontSize="44" FontWeight="SemiBold" />
+                        
+                        <Canvas  Margin="0 15 0 0">
+                            <Rectangle Width="430" Height="380" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/hackaton.png" Margin="0 20 0 10"/>
+                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>
+                                        Lugar de encuentro donde los participantes son reunidos con médicos
+                                        locales para compartir ideas e innovar, aplicando inmediatamente los 
+                                        conceptos y lecciones en proyectos actuales con equipos multidisciplinarios 
+                                        para desarrollar prototipos rápidos y resolver problemas reales.</Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
+                    </StackPanel>
+                   
                 </phone:PivotItem>
                 <!--Fin Hackaton-->
                
                 <!--Inicio Curso Sana-->
                 <phone:PivotItem x:Name="SanaCourse">
                     <phone:PivotItem.Header>
-                        <TextBlock Text="Curso Sana" Foreground="#860000" FontSize="50"/>
+                        <TextBlock Text="Curso Sana" FontWeight="SemiBold" Foreground="#FF3300" FontSize="50"/>
                     </phone:PivotItem.Header>
 
-                    <StackPanel >
-                        <Image Source="/Images/step3.png" Height="150" Margin="0 0 0 10"/>
-                        <RichTextBox  TextAlignment = "justify" Foreground="#860800" FontWeight="SemiBold" IsReadOnly = "True"  Margin="0 20 0 0">
-                            <Paragraph>
-                                Espacio colaborativo donde los participantes podrán
-                            continuar su aprendizaje y compartir ideas de proyectos
-                            en un ambiente estructurado apoyado por una red global
-                            de socios académicos. Este curso puede ser tomado por los
-                            interesados dependiendo de su disponibilidad en SANA.
-                            </Paragraph>
-                        </RichTextBox>
+
+                    <StackPanel Margin="0 15 0 0">
+                        <Canvas  Margin="0 15 0 0">
+                            <Rectangle Width="430" Height="400" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/cursosana.png" Margin="0 30 0 10"/>
+                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>
+                                        Espacio colaborativo donde los participantes podrán 
+                                        continuar su aprendizaje y compartir ideas de proyectos 
+                                        en un ambiente estructurado apoyado por una red global 
+                                        de socios académicos. Este curso puede ser tomado por los
+                                        interesados dependiendo de su disponibilidad en
+                                        <Hyperlink NavigateUri="http://sana.mit.edu/" Foreground="White" FontWeight="SemiBold">SANA</Hyperlink>
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
                     </StackPanel>
+
                 </phone:PivotItem>
                 <!--Fin Curso Sana-->
 
                 <!--Inicio CreaTIC-->
                 <phone:PivotItem x:Name="Creatic">
                     <phone:PivotItem.Header>
-                        <TextBlock Text="CreaTIC" Foreground="#860000" FontSize="50"/>
+                        <TextBlock Text="Incubadora" FontWeight="SemiBold" Foreground="#FF3300" FontSize="50"/>
                     </phone:PivotItem.Header>
-                    <StackPanel >
-                        <Image Source="/Images/step4.png" Height="150" Margin="0 0 0 10"/>
-                        <RichTextBox  TextAlignment = "justify" FontWeight="SemiBold" Foreground="#860800"  IsReadOnly = "True" Margin="0 20 0 0">
-                            <Paragraph>
-                                Los proyectos destacados pueden continuar como investigación
-                                o iniciativas de empresas, apoyados por la corporación Cluster
-                                CreaTIC, mediante sus unidades de incubación y centro de 
-                                desarrollo tecnológico. El proceso de incubación iniciará
-                                después de la hackathon.
-                            </Paragraph>
-                        </RichTextBox>
+
+
+                    <StackPanel Margin="0 15 0 0">
+                        <Canvas  Margin="0 15 0 0">
+                            <Rectangle Width="430" Height="400" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/incubadora.png" Margin="0 30 0 10"/>
+                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>
+                                        Los proyectos destacados pueden continuar como investigación 
+                                o iniciativas de empresas, apoyados por la Corporación Cluster 
+                                CreaTIC, mediante su unidad de Incubación y Centro de Desarrollo
+                                Tecnológico. El proceso de incubación iniciará después de la hackathon.
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
                     </StackPanel>
                 </phone:PivotItem>
                 <!--Fin CreaTIC-->

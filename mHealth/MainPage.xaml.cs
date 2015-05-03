@@ -13,6 +13,7 @@ using TweetSharp;
 using Windows.UI.Popups;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using Microsoft.Phone.Tasks;
 
 
 namespace mHealth
@@ -29,31 +30,24 @@ namespace mHealth
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
-
-        private void IrActividades(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Actividades.xaml", UriKind.Relative));
-
-        }
-
-      
+              
         private void IrPlatinium(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SponsorsPlatinium.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Sponsors.xaml?item=2", UriKind.Relative));
         }
 
         private void IrGolden(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SponsorsGolden.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Sponsors.xaml?item=1", UriKind.Relative));
         }
 
         private void IrSilver(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/SponsorsPlata.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Sponsors.xaml?item=0", UriKind.Relative));
         }
 
 
-        //Metodo para traer twits
+        //Metodo para traer tweets
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -61,10 +55,8 @@ namespace mHealth
             {
                 //Obtain keys by registering your app on https://dev.twitter.com/apps
                 //                                 costumer key             ,   costumer key secret
-                var service = new TwitterService("VPRQWK37J2z2EIntchiWFT4Nt", "GCPwQOG91rAtQHY8VuByzT0GNqjqFXP8Dob6w3ZbdibxzlOU43");
-                //                                token                                     ,        token secret
-                service.AuthenticateWith("435393700-T7HqdOi4eg2TKeDLwD9CA11vbpuKOYlQ5psVwFPb", "CsOG3mEZYB5rT3TcUHp3Wgi8lpQ8zCMp2GFsUTQbSzo3S");
-
+                var service = new TwitterService("vyC1jcdmwiITzLGXFHDwsH7Bt", "L6sarTFzb9QTCzOs1j1NjSdeD2yTZnFrsOzhuN6PN6cEZ3o6KU");
+                service.AuthenticateWith("435393700-3XfGClwmkI95SauKX88exrN4aPz5u9hxnIdjK69Z", "UtcU4OATLuZqWJ9wOwIhwm4FEnSyKX7EPwAn3rE1gvpyV");
                 //ScreenName is the profile name of the twitter user.
                 service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions() { ScreenName = "ClusterCreaTic" }, (ts, rep) =>
                 {
@@ -107,31 +99,44 @@ namespace mHealth
         }
         //Fin enviar correo electrónico
 
+        //Inicio IrTwitter
+        private void IrTwitter(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("http://twitter.com/ClusterCreaTIC", UriKind.Absolute);
+            wbt.Uri= myUri;
+            wbt.Show();
+        }
+        //Fin IrTwitter
         
+        //Inicio Ir a Página Web
+        private void IrWeb(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("http://parquesoftpopayan.com", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+        }
 
+        private void irEntrenamiento(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Actividades.xaml?item=0", UriKind.Relative));
+        }
+        private void irHackaton(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Actividades.xaml?item=1", UriKind.Relative));
+        }
 
+        private void irSana(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Actividades.xaml?item=2", UriKind.Relative));
+        }
 
+        private void irIncubadora(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Actividades.xaml?item=3", UriKind.Relative));
+        }
+        
        
-
-        //Metodo para enviar correos
-
-        
-
-
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
-
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
-
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
     }
 }

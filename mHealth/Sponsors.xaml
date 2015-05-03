@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:core="clr-namespace:System;assembly=mscorlib"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -14,9 +15,10 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
+    <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush ImageSource="/images/mac-1.jpg"/>
+            <ImageBrush ImageSource="/Images/mac-1.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -24,211 +26,561 @@
         </Grid.RowDefinitions>
 
         <!--Inicio Cabecera-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Images/logohacka.png" Height="180"/>
                 <StackPanel>
                     <TextBlock Text="mHealth" FontSize="60" Margin="30 0 0 0"/>
                     <TextBlock Text="Colombia" FontSize="50" Margin="30 -25 0 0"/>
-                    <TextBlock Text="Junio 8-14" FontSize="18" HorizontalAlignment="Center" Margin="0 -8 0 0"/>
+                    <TextBlock Text="Junio 8-14" FontSize="25" HorizontalAlignment="Center" Margin="0 -8 0 0"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
         <!--Fin Cabecera-->
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,-35,12,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            
+            <Grid.Resources>
+                <core:Double x:Key="hrec">30</core:Double>
+                <Thickness x:Key="Margin">-30,35,0,0</Thickness>
+                <Thickness x:Key="Margin2">0,35,0,0</Thickness>
+            </Grid.Resources>
 
-            <!--Inicio Beneficios-->
-            <StackPanel Orientation="Vertical" Grid.Column="0">
-                <TextBlock HorizontalAlignment="Center" Foreground="#860000"  FontSize="35" FontWeight="Bold" Margin="0 0 0 15">
-                    Beneficios
-                </TextBlock>
+            <phone:Pivot x:Name="beneficios" Margin="0 -35 0 0">
 
-                <Border Opacity="0.7"  Background="#B35252">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap">
-                    Apoyar activamente en la organización de la Hackathon.
-                    </TextBlock>
-                </Border>
+                <!--Inicio Silver-->
+                <phone:PivotItem x:Name="Silver" >
 
-                <Border Opacity="0.7"  Background="#F7F7FA">
-                    <TextBlock HorizontalAlignment="Center" Foreground="#B35252" FontSize="17" TextWrapping="Wrap">
-                    Contribuir con la definición de temas o retos.
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.7"  Background="#B35252">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                 Aportar un premio especial a los solucionadores.
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.7"  Background="#F7F7FA">
-                    <TextBlock HorizontalAlignment="Center" Foreground="#B35252" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                Posicionamiento Premiun en la publicidad del evento.
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.9"  Background="#B35252">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                 Acceso y participación de futuros eventos (como organizador).
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.7"  Background="#F7F7FA">
-                    <TextBlock HorizontalAlignment="Center" Foreground="#B35252" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                    Informes de gasto de sus recursos.
-                    </TextBlock>
-                </Border>
-
-
-                <Border Opacity="0.9"  Background="#B35252">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                    Patrocinador de todo el evento.
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.7"  Background="#F7F7FA">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" Foreground="#B35252" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                    Oportunidad de orientar una ponencia en el evento.
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.9"  Background="#B35252">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                Posibilidad de patrocinar una comida con su material publicitario.
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.7"  Background="#F7F7FA">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" Foreground="#B35252" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                    Oportunidad de patrocinar una comida con su material publicitario
-                    </TextBlock>
-                </Border>
-
-                <Border Opacity="0.9"  Background="#B35252">
-                    <TextBlock HorizontalAlignment="Center" FontSize="17" TextWrapping="Wrap" Margin="0,0,26,0" Width="270">
-                    Número de asistentes de su compañia al evento.
-                    </TextBlock>
-                </Border>
-            </StackPanel>
-            <!--Fin Beneficios-->
-
-            <!--Inicio Pivote Opciones-->
-            <phone:Pivot x:Name="precios" Width="170" Grid.Column="1" Margin="-10 0 0 0">
-
-                <!--Inicio Platinium-->
-                <phone:PivotItem x:Name="platinum" Margin="0 20">
-                    <phone:PivotItem.Header >
-                        <StackPanel Orientation="Vertical" Margin="0 -10 0 0">
-                            <TextBlock Text="Platinium" FontSize="25" Foreground="#860000"  FontWeight="SemiBold"/>
-                            <TextBlock Text="$2000 USD" FontSize="20" Foreground="#860000"  FontWeight="Light" TextAlignment="Center"/>
+                    <phone:PivotItem.Header>
+                        <StackPanel>
+                            <TextBlock Text="Beneficios" Width="420" TextAlignment="Center" FontWeight="Bold" Foreground="#FF3300" FontSize="50"/>
+                            <TextBlock Text="Silver $500USD" Width="420" TextAlignment="Center" FontWeight="ExtraBold" Margin="0 -10 0 0" FontSize="40"/>
                         </StackPanel>
                     </phone:PivotItem.Header>
-                    <StackPanel Margin="0 -15 0 0">
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+                    <Grid Margin=" -15 0 0 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+                        <Canvas Grid.Column="0" Grid.Row="0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Apoyar activamente en la organización de la Hackathon.
+                            </TextBlock>
+                        </Canvas>
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+                        <Canvas Grid.Column="0" Grid.Row="1" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Contribuir con la definición de temas o retos.
+                            </TextBlock>
+                        </Canvas>
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+                        <Canvas Grid.Column="0" Grid.Row="2" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Aportar un premio especial a los solucionadores.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="3" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Posicionamiento Premiun en la publicidad del evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="4" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="45" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Acceso y participación de futuros eventos (como organizador).
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="5" Margin="0 50 0 0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Informes de gasto de sus recursos.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="6" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                            Patrocinador de todo el evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="7" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Oportunidad de orientar una ponencia en el evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="8" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="45" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Oportunidad de patrocinar una comida con su material publicitario
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="9" Margin="0 50 0 0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="350" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Número de asistentes de su compañia al evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="0" Margin="-30 0 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="1" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="2" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="3" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="4" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="45" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 11 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="5" Margin="-30 50 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="6" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="7" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="8" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="45" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 11 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="9" Margin="-90 50 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="100" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="30 3 0 0">
+                            Sólo 2
+                            </TextBlock>
+                        </Canvas>
+                    </Grid>
+
+                    
+
+                </phone:PivotItem>
+                <!--Fin Silver-->
+
+                <!--Inicio Gold-->
+                <phone:PivotItem x:Name="Gold" >
+
+                    <phone:PivotItem.Header>
+                        <StackPanel>
+                            <TextBlock Text="Beneficios" Width="420" TextAlignment="Center" FontWeight="Bold" Foreground="#FF3300" FontSize="50"/>
+                            <TextBlock Text="Gold $1000USD" Width="420" TextAlignment="Center" FontWeight="ExtraBold" Margin="0 -10 0 0" FontSize="40"/>
+                        </StackPanel>
+                    </phone:PivotItem.Header>
+
+                    <Grid Margin=" -15 0 0 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Canvas Grid.Column="0" Grid.Row="0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Apoyar activamente en la organización de la Hackathon.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="1" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Contribuir con la definición de temas o retos.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="2" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Aportar un premio especial a los solucionadores.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="3" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Posicionamiento Premiun en la publicidad del evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="4" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="45" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Acceso y participación de futuros eventos (como organizador).
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="5" Margin="0 50 0 0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Informes de gasto de sus recursos.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="6" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                            Patrocinador de todo el evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="7" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Oportunidad de orientar una ponencia en el evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="8" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="45" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Oportunidad de patrocinar una comida con su material publicitario
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="9" Margin="0 50 0 0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="350" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Número de asistentes de su compañia al evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="0" Margin="-30 0 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="1" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="2" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="3" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="4" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="45" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 11 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="5" Margin="-30 50 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
+                             NO
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="6" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="7" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="8" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="45" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 11 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="9" Margin="-90 50 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="100" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="30 3 0 0">
+                            Sólo 3
+                            </TextBlock>
+                        </Canvas>
+                    </Grid>
 
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Si</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
+                </phone:PivotItem>
+                <!--Fin Gold-->
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 13">Si</TextBlock>
+                <!--Inicio Platinium-->
+                <phone:PivotItem x:Name="Platinium" >
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+                    <phone:PivotItem.Header>
+                        <StackPanel>
+                            <TextBlock Text="Beneficios" Width="420" TextAlignment="Center" FontWeight="Bold" Foreground="#FF3300" FontSize="50"/>
+                            <TextBlock Text="Platinium $1500USD" Width="420" TextAlignment="Center" FontWeight="ExtraBold" Margin="0 -10 0 0" FontSize="40"/>
+                        </StackPanel>
+                    </phone:PivotItem.Header>
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
+                    <Grid Margin=" -15 0 0 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">De 5 a 10</TextBlock>
-                    </StackPanel>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Canvas Grid.Column="0" Grid.Row="0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Apoyar activamente en la organización de la Hackathon.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="1" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Contribuir con la definición de temas o retos.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="2" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Aportar un premio especial a los solucionadores.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="3" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Posicionamiento Premiun en la publicidad del evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="4" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="45" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Acceso y participación de futuros eventos (como organizador).
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="5" Margin="0 50 0 0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Informes de gasto de sus recursos.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="6" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                            Patrocinador de todo el evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="7" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Oportunidad de orientar una ponencia en el evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="8" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="45" Width="405" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Oportunidad de patrocinar una comida con su material publicitario
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="9" Margin="0 50 0 0">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="350" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Número de asistentes de su compañia al evento.
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="0" Margin="-30 0 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="1" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="2" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="3" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="4" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="45" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 11 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="5" Margin="-30 50 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="6" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="7" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 3 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="8" Margin="{StaticResource Margin}">
+                            <Rectangle Fill="White" Height="45" Width="40" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="13 11 0 0">
+                             SI
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="9" Margin="-90 50 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="100" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="17 3 0 0">
+                            De 5 a 10
+                            </TextBlock>
+                        </Canvas>
+                    </Grid>
+
+
+
                 </phone:PivotItem>
                 <!--Fin Platinium-->
 
-                <!--Inicio Golden-->
-                <phone:PivotItem x:Name="gold">
-                    <phone:PivotItem.Header>
-                        <StackPanel Orientation="Vertical" Margin="0 -10 0 0">
-                            <TextBlock Text="Golden" Foreground="#860000"  FontSize="25" FontWeight="SemiBold" TextAlignment="Center"/>
-                            <TextBlock Text="$1000 USD" Foreground="#860000"  FontSize="20" FontWeight="Light" TextAlignment="Center"/>
-                        </StackPanel>
-                    </phone:PivotItem.Header>
 
-                    <StackPanel Margin="0 -25 0 0">
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Si</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 13">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Solo 3</TextBlock>
-                    </StackPanel>
-
-                </phone:PivotItem>
-                <!--Fin Golden-->
-                
-                <!--Inicio Silver-->
-                <phone:PivotItem x:Name="silver">
-                    <phone:PivotItem.Header>
-                        <StackPanel Orientation="Vertical" Margin="0 -10 0 0">
-                            <TextBlock Text="Silver" Foreground="#860000" FontSize="25" FontWeight="SemiBold" TextAlignment="Center"/>
-                            <TextBlock Text="$500 USD" FontSize="20" Foreground="#860000"  FontWeight="Light" TextAlignment="Center"/>
-                        </StackPanel>
-                    </phone:PivotItem.Header>
-
-                    <StackPanel Margin="0 -25 0 0">
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">No</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 0">Si</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 5">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 13">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Si</TextBlock>
-
-                        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 20">Solo 2</TextBlock>
-                    </StackPanel>
-                </phone:PivotItem>
-                <!--Fin Silver-->                
             </phone:Pivot>
-            <!--Fin Pivote Opciones-->
+            
+            
         </Grid>
+
+
     </Grid>
 
 </phone:PhoneApplicationPage>

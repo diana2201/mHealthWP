@@ -110,15 +110,6 @@
     <Compile Include="Sponsors.xaml.cs">
       <DependentUpon>Sponsors.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SponsorsGolden.xaml.cs">
-      <DependentUpon>SponsorsGolden.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SponsorsPlata.xaml.cs">
-      <DependentUpon>SponsorsPlata.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SponsorsPlatinium.xaml.cs">
-      <DependentUpon>SponsorsPlatinium.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -134,18 +125,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sponsors.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SponsorsGolden.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SponsorsPlata.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SponsorsPlatinium.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,23 +170,27 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\creatic.jpg" />
+    <Content Include="Images\cursosana.png" />
+    <Content Include="Images\entrenamiento.png" />
     <Content Include="Images\face.jpg.png" />
     <Content Include="Images\Golden.png" />
+    <Content Include="Images\hackaton.png" />
+    <Content Include="Images\incubadora.png" />
     <Content Include="Images\mac-1.jpg" />
     <Content Include="Images\mac.jpg" />
     <Content Include="Images\Platinium.png" />
     <Content Include="Images\sana-logo.png" />
     <Content Include="Images\Silver.png" />
+    <Content Include="Images\Sponsor\cauca_logo.png" />
     <Content Include="Images\Sponsor\cluster_logo.png" />
-    <Content Include="Images\Sponsor\csail_logo.png" />
-    <Content Include="Images\Sponsor\imes_logo.png" />
     <Content Include="Images\logohacka.png" />
     <Content Include="Images\Sponsor\microsoft_logo.png" />
-    <Content Include="Images\Sponsor\mit_logo.png" />
+    <Content Include="Images\Sponsor\nucleosin_logo.png" />
     <Content Include="Images\step1.png" />
     <Content Include="Images\step2.png" />
     <Content Include="Images\step3.png" />
     <Content Include="Images\step4.png" />
+    <Content Include="Images\telefonos.png" />
     <Content Include="Images\topbg5.jpg" />
     <Content Include="Images\twitter.png" />
   </ItemGroup>
