@@ -4,8 +4,8 @@
          xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest"
          xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
 
-  <Identity Name="26f27cbd-e609-43e5-8d7f-c9f240c5b578"
-            Publisher="CN=DianaM"
+  <Identity Name="41020Diana.2201.mHealthColombia"
+            Publisher="CN=F682E157-936C-4EC9-A206-41C71D864935"
             Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="eb1e8d34-2def-4091-8d55-edda5ddf0a3d"
