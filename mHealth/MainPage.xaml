@@ -304,14 +304,16 @@
             <!--Fin Patrocinadores-->
 
             <!--Inicio Mapa-->
-            <phone:PanoramaItem Margin="0 -40">
+            <phone:PanoramaItem Margin="15 -40">
                 <phone:PanoramaItem.Header>
                     Ubicación
                 </phone:PanoramaItem.Header>
                 <phone:PanoramaItem.Foreground>
                     <SolidColorBrush Color="#FF3300"/>
                 </phone:PanoramaItem.Foreground>
-                <Controls:Map Center="2.434287, -76.613922" ZoomLevel="16" Height="450" Margin="0 -100 0 0"/>
+                <Controls:Map Center="2.4524619261148266, -76.59806044358595" ColorMode="Light" ZoomLevel="19" 
+                              LandmarksEnabled="true" PedestrianFeaturesEnabled="true" CartographicMode="Hybrid"
+                              Height="450" Margin="0 -100 0 0"  Loaded="myMapControl_Loaded"/>
             </phone:PanoramaItem>
             <!--Fin Mapa-->
 

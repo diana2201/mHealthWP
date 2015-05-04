@@ -55,8 +55,8 @@ namespace mHealth
             {
                 //Obtain keys by registering your app on https://dev.twitter.com/apps
                 //                                 costumer key             ,   costumer key secret
-                var service = new TwitterService("vyC1jcdmwiITzLGXFHDwsH7Bt", "L6sarTFzb9QTCzOs1j1NjSdeD2yTZnFrsOzhuN6PN6cEZ3o6KU");
-                service.AuthenticateWith("435393700-3XfGClwmkI95SauKX88exrN4aPz5u9hxnIdjK69Z", "UtcU4OATLuZqWJ9wOwIhwm4FEnSyKX7EPwAn3rE1gvpyV");
+                var service = new TwitterService("YXO8K2jFXbiKyLNDdn7ydFRPU", "VkVSDQ44Z9oJUm2PLHUJl9OW3y30J5xNjwlrLW4Bzp0MNta68S");
+                service.AuthenticateWith("3170504927-kcmyI4GV9ZMUvU9sYxJR6xoXHthE6DlmUsGVdiI", "EEeTKnuc5VwYIi6vygKu7WVznItuavm5G6lBY2CXwkfkO");
                 //ScreenName is the profile name of the twitter user.
                 service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions() { ScreenName = "ClusterCreaTic" }, (ts, rep) =>
                 {
@@ -135,6 +135,12 @@ namespace mHealth
         private void irIncubadora(object sender, System.Windows.Input.GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Actividades.xaml?item=3", UriKind.Relative));
+        }
+
+        private void myMapControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.ApplicationId = "5e328859-ceac-4982-a76b-e518b022ecc7";
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.AuthenticationToken = "nKwcC-RhskoUqHpf1Psh2A";
         }
         
        
