@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 
 namespace mHealth
 {
@@ -26,6 +27,14 @@ namespace mHealth
                 var indexParsed = int.Parse(index);
                 beneficios.SelectedIndex = indexParsed;
             }
+        }
+
+        private void Descargar(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("https://drive.google.com/file/d/0B_5XdxwasalCVktzVEVQdThscG8/view?usp=sharing", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
         }
     }
 }

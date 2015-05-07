@@ -45,7 +45,7 @@
                 <phone:PivotItem x:Name="Entrenamiento" >
 
                     <phone:PivotItem.Header>
-                        <TextBlock Text="Entrenamiento" FontWeight="SemiBold" Foreground="#FF3300" FontSize="50"/>
+                        <TextBlock Text="Entrenamiento" FontWeight="Normal" Foreground="#FF3300" FontSize="50"/>
                     </phone:PivotItem.Header>
                     
 
@@ -75,7 +75,7 @@
                 <phone:PivotItem x:Name="Hackaton" >
 
                     <phone:PivotItem.Header>
-                        <TextBlock Text="Hackaton" FontWeight="SemiBold" Foreground="#FF3300" FontSize="50"/>
+                        <TextBlock Text="Hackaton" FontWeight="Normal" Foreground="#FF3300" FontSize="50"/>
                     </phone:PivotItem.Header>
                     
 
@@ -104,7 +104,7 @@
                 <!--Inicio Curso Sana-->
                 <phone:PivotItem x:Name="SanaCourse">
                     <phone:PivotItem.Header>
-                        <TextBlock Text="Curso Sana" FontWeight="SemiBold" Foreground="#FF3300" FontSize="50"/>
+                        <TextBlock Text="Curso Sana" FontWeight="Normal" Foreground="#FF3300" FontSize="50"/>
                     </phone:PivotItem.Header>
 
 
@@ -113,7 +113,7 @@
                             <Rectangle Width="430" Height="400" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
                             <StackPanel Orientation="Vertical">
                                 <Image Source="/images/cursosana.png" Margin="0 30 0 10"/>
-                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Normal" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
                                     <Paragraph>
                                         Espacio colaborativo donde los participantes podrán 
                                         continuar su aprendizaje y compartir ideas de proyectos 
@@ -142,7 +142,7 @@
                             <Rectangle Width="430" Height="400" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
                             <StackPanel Orientation="Vertical">
                                 <Image Source="/images/incubadora.png" Margin="0 30 0 10"/>
-                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Normal" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
                                     <Paragraph>
                                         Los proyectos destacados pueden continuar como investigación 
                                 o iniciativas de empresas, apoyados por la Corporación Cluster 

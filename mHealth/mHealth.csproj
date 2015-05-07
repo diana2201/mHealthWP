@@ -178,7 +178,10 @@
     <Content Include="Images\incubadora.png" />
     <Content Include="Images\mac-1.jpg" />
     <Content Include="Images\mac.jpg" />
+    <Content Include="Images\mapa.PNG" />
     <Content Include="Images\Platinium.png" />
+    <Content Include="Images\puntero.png" />
+    <Content Include="Images\puntero1.png" />
     <Content Include="Images\sana-logo.png" />
     <Content Include="Images\Silver.png" />
     <Content Include="Images\Sponsor\cauca_logo.png" />

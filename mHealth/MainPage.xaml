@@ -57,10 +57,10 @@
                             </Grid.RowDefinitions>
 
                             <StackPanel Grid.Row="0" Orientation="Horizontal" >
-                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="50 0 0 0"/>
-                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="20 0 00 0" />
-                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="20 0 0 0"/>
-                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="35 0 20 0"/>
+                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="50 0 0 0" Tap="goCsterPage"/>
+                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="20 0 00 0" Tap="goMicrosoftPage" />
+                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="20 0 0 0" Tap="goGobernacionPage"/>
+                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="35 0 20 0" Tap="goNucleoInovacionPage"/>
                             </StackPanel>
                         </Grid>
 
@@ -271,10 +271,10 @@
                             </Grid.RowDefinitions>
 
                             <StackPanel Grid.Row="0" Orientation="Horizontal" >
-                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="50 0 0 0"/>
-                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="20 0 00 0" />
-                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="20 0 0 0"/>
-                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="35 0 20 0"/>
+                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="50 0 0 0" Tap="goCsterPage"/>
+                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="20 0 00 0" Tap="goMicrosoftPage"/>
+                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="20 0 0 0" Tap="goGobernacionPage"/>
+                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="35 0 20 0" Tap="goNucleoInovacionPage"/>
                             </StackPanel>
                         </Grid>
                     </Canvas>
@@ -311,9 +311,11 @@
                 <phone:PanoramaItem.Foreground>
                     <SolidColorBrush Color="#FF3300"/>
                 </phone:PanoramaItem.Foreground>
-                <Controls:Map Center="2.4524619261148266, -76.59806044358595" ColorMode="Light" ZoomLevel="19" 
-                              LandmarksEnabled="true" PedestrianFeaturesEnabled="true" CartographicMode="Hybrid"
-                              Height="450" Margin="0 -100 0 0"  Loaded="myMapControl_Loaded"/>
+                <!--<Controls:Map Center="2.4524619261148266, -76.59806044358595" ColorMode="Light" ZoomLevel="16" 
+                              LandmarksEnabled="true" PedestrianFeaturesEnabled="true" CartographicMode="Road"
+                              Height="450" Margin="0 -100 0 0"  Loaded="myMapControl_Loaded" x:Name="MyMap"/>-->
+                <Image Source="/images/mapa.png" Margin="0 -90 0 0"/>
+                
             </phone:PanoramaItem>
             <!--Fin Mapa-->
 
@@ -345,9 +347,9 @@
                     </Canvas>
 
                     <StackPanel Grid.ColumnSpan="2" Grid.Row="1" Tap="IrWeb" Margin="0 -15 0 0" >                       
-                        <StackPanel Height="70" Width="250"  Orientation="Horizontal"  Tap="IrTwitter" Margin="0 0 0 0" Background="#33CCFF">
+                        <StackPanel Height="70" Width="220"  Orientation="Horizontal"  Tap="IrTwitter" Margin="0 0 0 0" Background="#33CCFF">
                             <Image Source="/images/twitter.png" Width="70" Height="70"/>
-                            <TextBlock Text="@ClusterCreaTIC" Foreground="White" TextAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="0 20 0 0"/>
+                            <TextBlock  Text="@mHealthCO" Foreground="White" TextAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="0 20 0 0"/>
                         </StackPanel>
                         <Image Source="/images/telefonos.png" Margin="0 10 0 0"/>
                     </StackPanel>

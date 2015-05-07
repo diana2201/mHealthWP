@@ -14,6 +14,10 @@ using Windows.UI.Popups;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 using Microsoft.Phone.Tasks;
+using Microsoft.Phone.Maps.Controls;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using System.Windows.Media;
 
 
 namespace mHealth
@@ -24,6 +28,7 @@ namespace mHealth
         public MainPage()
         {
             InitializeComponent();
+            //CreatePushPins();
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
             
 
@@ -95,6 +100,7 @@ namespace mHealth
             var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient("dianasamboni22@gmail.com");
             emailMessage.To.Add(emailRecipient);            
             await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
+            msjcorreo.Text = " ";
 
         }
         //Fin enviar correo electrónico
@@ -103,7 +109,7 @@ namespace mHealth
         private void IrTwitter(object sender, System.Windows.Input.GestureEventArgs e)
         {
             var wbt = new WebBrowserTask();
-            Uri myUri = new Uri("http://twitter.com/ClusterCreaTIC", UriKind.Absolute);
+            Uri myUri = new Uri("http://twitter.com/mHealthCO", UriKind.Absolute);
             wbt.Uri= myUri;
             wbt.Show();
         }
@@ -113,7 +119,7 @@ namespace mHealth
         private void IrWeb(object sender, System.Windows.Input.GestureEventArgs e)
         {
             var wbt = new WebBrowserTask();
-            Uri myUri = new Uri("http://parquesoftpopayan.com", UriKind.Absolute);
+            Uri myUri = new Uri("http://mhealth.com.co", UriKind.Absolute);
             wbt.Uri = myUri;
             wbt.Show();
         }
@@ -142,6 +148,72 @@ namespace mHealth
             Microsoft.Phone.Maps.MapsSettings.ApplicationContext.ApplicationId = "5e328859-ceac-4982-a76b-e518b022ecc7";
             Microsoft.Phone.Maps.MapsSettings.ApplicationContext.AuthenticationToken = "nKwcC-RhskoUqHpf1Psh2A";
         }
+
+        private void goCsterPage(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("http://parquesoftpopayan.com", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+        }
+
+        private void goMicrosoftPage(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("https://www.microsoft.com/es-co/", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+        }
+
+        private void goGobernacionPage(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("https://www.cauca.gov.co", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+        }
+
+        private void goNucleoInovacionPage(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("https://www.parquesoftpopayan.com", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+        }
+
+        //private void CreatePushPins()
+        //{
+
+        //    var overlay = new MapOverlay();
+        //    overlay.GeoCoordinate = new System.Device.Location.GeoCoordinate()
+        //    {
+        //        //2.4524619261148266
+        //        //-76.59806044358595
+        //        Latitude =  2.453608,
+        //        Longitude = -76.598292,
+        //    };
+
+        //    BitmapImage image = new BitmapImage(new Uri("/Images/puntero1.png", UriKind.Relative));
+        //    Rectangle ellipse = new Rectangle
+        //    {
+        //        Height = 75,
+        //        Width = 75,
+        //    };
+        //    ImageBrush profileImageBrush = new ImageBrush();
+        //    profileImageBrush.ImageSource = image;
+        //    ellipse.Fill = profileImageBrush;
+        //    overlay.Content = new Rectangle()
+        //    {
+        //        Width = 50,
+        //        Height = 50,
+        //        Fill = profileImageBrush
+        //    };
+
+        //    MapLayer layer = new MapLayer();
+        //    layer.Add(overlay);
+        //    MyMap.Layers.Add(layer);
+
+        //}
         
        
     }

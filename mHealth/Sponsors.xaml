@@ -71,6 +71,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
                         
                         <Grid.ColumnDefinitions>
@@ -148,6 +149,13 @@
                             </TextBlock>
                         </Canvas>
 
+                        <Canvas Grid.Column="0" Grid.Row="10" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="280" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Descarga el formulario de inscripción
+                            </TextBlock>
+                        </Canvas>
+
                         <Canvas Grid.Column="1" Grid.Row="0" Margin="-30 0 0 0">
                             <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
                             <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
@@ -217,6 +225,15 @@
                             Sólo 2
                             </TextBlock>
                         </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="10" Margin="-160 35 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="170" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="50 3 0 0" Tap="Descargar">
+                            Descargar
+                            </TextBlock>
+                        </Canvas>
+
+
                     </Grid>
 
                     
@@ -236,6 +253,7 @@
 
                     <Grid Margin=" -15 0 0 0">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
@@ -323,6 +341,14 @@
                             </TextBlock>
                         </Canvas>
 
+
+                        <Canvas Grid.Column="0" Grid.Row="10" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="280" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Descarga el formulario de inscripción
+                            </TextBlock>
+                        </Canvas>
+                        
                         <Canvas Grid.Column="1" Grid.Row="0" Margin="-30 0 0 0">
                             <Rectangle Fill="White" Height="{StaticResource hrec}" Width="40" Opacity="0.9"/>
                             <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="40" Padding="8 3 0 0">
@@ -392,6 +418,21 @@
                             Sólo 3
                             </TextBlock>
                         </Canvas>
+                        
+                        <Canvas Grid.Column="1" Grid.Row="9" Margin="-90 50 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="100" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="30 3 0 0">
+                            Sólo 3
+                            </TextBlock>
+                        </Canvas>
+
+
+                        <Canvas Grid.Column="1" Grid.Row="10" Margin="-160 35 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="170" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="50 3 0 0" Tap="Descargar">
+                            Descargar
+                            </TextBlock>
+                        </Canvas>
                     </Grid>
 
 
@@ -411,6 +452,7 @@
 
                     <Grid Margin=" -15 0 0 0">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
@@ -565,6 +607,20 @@
                             <Rectangle Fill="White" Height="{StaticResource hrec}" Width="100" Opacity="0.9"/>
                             <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="17 3 0 0">
                             De 5 a 10
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="0" Grid.Row="10" Margin="{StaticResource Margin2}">
+                            <Rectangle Fill="Black" Height="{StaticResource hrec}" Width="280" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Center" FontWeight="Normal"  FontSize="15.5" TextWrapping="Wrap" Width="400" Padding="10 0 0 0">
+                             Descarga el formulario de inscripción
+                            </TextBlock>
+                        </Canvas>
+
+                        <Canvas Grid.Column="1" Grid.Row="10" Margin="-160 35 0 0">
+                            <Rectangle Fill="White" Height="{StaticResource hrec}" Width="170" Opacity="0.9"/>
+                            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontWeight="Bold"  FontSize="15.5" TextWrapping="Wrap" Width="140" Padding="50 3 0 0" Tap="Descargar">
+                            Descargar
                             </TextBlock>
                         </Canvas>
                     </Grid>
