@@ -1,0 +1,105 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="mHealth.Premios"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/mac-1.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Inicio Cabecera-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/logohacka.png" Height="180"/>
+                <StackPanel>
+                    <TextBlock Text="mHealth" FontSize="60" Margin="30 0 0 0"/>
+                    <TextBlock Text="Colombia" FontSize="50" Margin="30 -25 0 0"/>
+                    <TextBlock Text="Junio 8-14" FontSize="25" HorizontalAlignment="Center" Margin="0 -8 0 0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <!--Fin Cabecera-->
+
+        <!--ContentPanel - place additional content here-->
+        <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" VerticalScrollBarVisibility="Visible">
+            <StackPanel Margin="30 0 0 100">
+                
+                <Canvas>
+                    <Rectangle Fill="Black" Opacity="0.6" Width="400" Height="310" Canvas.Left="0" Canvas.ZIndex="0"/>
+                    <StackPanel Canvas.Top="5" Canvas.Left="10">
+                        <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="25">Primer Puesto!</TextBlock>
+                        <TextBlock Foreground="#FF3300" TextAlignment="Center" FontSize="23">3.000.000 COP</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Publicidad en Medios Regionales y Nacionales para el Primer Puesto.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">BizSpark Plus
+                        $60.000 USD en Servicios Windows Azure por un año.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Preparación para Pitch ante Microsoft Ventures.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Programa de Incubación CreaTIC-SANA
+                        Valorado en 20'000.000 COP.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Acceso Preferencial a 
+                    la Oferta de CeaTIC Academy.</TextBlock>
+                    </StackPanel>
+                </Canvas>
+
+                <Canvas  Margin="0 320 0 0">
+                    <Rectangle Fill="Black" Opacity="0.6" Width="400" Height="230" Canvas.Left="0" Canvas.ZIndex="0"/>
+                    <StackPanel Canvas.Top="5" Canvas.Left="10">
+                        <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="25">Segundo Puesto!</TextBlock>
+                        <TextBlock Foreground="#FF3300" TextAlignment="Center" FontSize="23">2.000.000 COP</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">BizSpark
+                        $750 USD/Mes en Servicios Windows Azure por tres años.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Programa de Incubación CreaTIC-SANA
+                        Valorado en 20'000.000 COP.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Acceso Preferencial a 
+                    la Oferta de CeaTIC Academy.</TextBlock>
+                    </StackPanel>
+                </Canvas>
+
+                <Canvas  Margin="0 240 0 0">
+                    <Rectangle Fill="Black" Opacity="0.6" Width="400" Height="230" Canvas.Left="0" Canvas.ZIndex="0"/>
+                    <StackPanel Canvas.Top="5" Canvas.Left="10">
+                        <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="25">Segundo Puesto!</TextBlock>
+                        <TextBlock Foreground="#FF3300" TextAlignment="Center" FontSize="23">1.000.000 COP</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">BizSpark
+                        $750 USD/Mes en Servicios Windows Azure por tres años.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Programa de Incubación CreaTIC-SANA
+                        Valorado en 20'000.000 COP.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Acceso Preferencial a 
+                    la Oferta de CeaTIC Academy.</TextBlock>
+                    </StackPanel>
+                </Canvas>
+
+                <Canvas Margin="0 240 0 100">
+                    <Rectangle Fill="Black" Opacity="0.6" Width="400" Height="180" Canvas.Left="0" Canvas.ZIndex="0"/>
+                    <StackPanel Canvas.Top="5" Canvas.Left="10">
+                        <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="25">Mejor App Windows Phone!</TextBlock>
+                        <TextBlock Foreground="#FF3300" TextAlignment="Center" FontSize="23">Celular Lumia</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">BizSpark
+                        $750 USD/Mes en Servicios Windows Azure por tres años.</TextBlock>
+                        <TextBlock TextWrapping="Wrap" Width="380" TextAlignment="Center" FontSize="19" FontWeight="Light">Acceso Preferencial a 
+                    la Oferta de CeaTIC Academy.</TextBlock>
+                    </StackPanel>
+                </Canvas>
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

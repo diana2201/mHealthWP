@@ -1,0 +1,167 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="mHealth.Expertos"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/mac-1.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Inicio Cabecera-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Images/logohacka.png" Height="180"/>
+                <StackPanel>
+                    <TextBlock Text="mHealth" FontSize="60" Margin="30 0 0 0"/>
+                    <TextBlock Text="Colombia" FontSize="50" Margin="30 -25 0 0"/>
+                    <TextBlock Text="Junio 8-14" FontSize="25" HorizontalAlignment="Center" Margin="0 -8 0 0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <!--Fin Cabecera-->
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+            <phone:Pivot x:Name="expertos" Margin="0 -35">
+
+                <!--Inicio Kenneth-->
+                <phone:PivotItem x:Name="Kenneth" >
+
+                    <phone:PivotItem.Header>
+                        <TextBlock Text="Kenneth Paik" FontWeight="Normal" Foreground="#FF3300" FontSize="50"/>
+                    </phone:PivotItem.Header>
+
+
+                    <StackPanel Margin="0 -30 0 0">
+
+                            <Canvas  Margin="0 30 0 0">
+                            <Rectangle Width="430" Height="450" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/keneth.png" Margin="0 10 0 0"/>
+                                <RichTextBox  FontSize="19" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>
+                                        Dr. Paik es un científico investigador y profesor en el Instituto de Ingeniería y Ciencias Médicas (IMES) 
+                                        en el MIT. Con amplio conocimiento en medicina, gestión empresarial y estrategia de la tecnología; apasionado 
+                                        por mejorar la calidad de la salud mundial a través del uso de tecnologías innovadoras. Completó su beca 
+                                        postdoctoral en informática biomédica en la Escuela de Medicina de Harvard y el Laboratorio de Ciencias de la 
+                                        Computación en el Hospital General de Massachusetts.                                        
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
+                    </StackPanel>
+
+                </phone:PivotItem>
+                <!--Fin Kenneth-->
+
+                <!--Inicio Eric-->
+                <phone:PivotItem x:Name="Eric" >
+
+                    <phone:PivotItem.Header>
+                        <TextBlock Text="Eric Winkler" FontWeight="Normal" Foreground="#FF3300" FontSize="50"/>
+                    </phone:PivotItem.Header>
+
+
+                    <StackPanel Margin="0 -30 0 0">
+
+                        <Canvas  Margin="0 30 0 0">
+                            <Rectangle Width="430" Height="450" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/eric.png" Margin="0 20 0 15"/>
+                                <RichTextBox  FontSize="19" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>
+                                        Integrante del MIT y líder de Desarrollo de Software de la plataforma de Sana desde 2011 y ha participado en varios 
+                                        hackathons y cursos patrocinados por Sana. Es responsable de la plataforma, incluyendo el Android mobile client, 
+                                        Python/Django middleware, y el módulo OpenMRS basado en Java. Eric ha brindado soporte a diversos proyectos de 
+                                        investigación en varios lugares del mundo, incluyendo Haití, India, Brasil y Argentina.
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
+                    </StackPanel>
+
+                </phone:PivotItem>
+                <!--Fin Eric-->
+
+                <!--Inicio Curso Sana-->
+                <!--Inicio Eric-->
+                <phone:PivotItem x:Name="Juan" >
+
+                    <phone:PivotItem.Header>
+                        <TextBlock Text="Juan S. Osorio" FontWeight="Normal" Foreground="#FF3300" FontSize="50"/>
+                    </phone:PivotItem.Header>
+
+
+                    <StackPanel Margin="0 -30 0 0">
+
+                        <Canvas  Margin="0 30 0 0">
+                            <Rectangle Width="430" Height="430" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/juan.png" Margin="0 20 0 15"/>
+                                <RichTextBox  FontSize="19" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>
+                                        Ingeniero Biomédico del convenio Escuela de Ingeniería de Antioquia y Universidad CES (Medellín, Colombia), estudiante de maestría 
+                                        en Computación Biomédica en la Universidad de Tecnología de Munich (TUM) y Director de Proyectos de la organización Sana Mobile en MIT. 
+                                        Recientemente galardonado como uno de los 35 Innovadores menores de 35 años en Colombia y en el mundo por el MIT Technology Review.
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
+                    </StackPanel>
+
+                </phone:PivotItem>
+                <!--Fin Eric-->
+                <!--Fin Curso Sana-->
+
+                <!--Inicio CreaTIC-->
+                <phone:PivotItem x:Name="Diego" >
+
+                    <phone:PivotItem.Header>
+                        <TextBlock Text="Diego López" FontWeight="Normal" Foreground="#FF3300" FontSize="50"/>
+                    </phone:PivotItem.Header>
+
+
+                    <StackPanel Margin="0 -30 0 0">
+
+                        <Canvas  Margin="0 30 0 0">
+                            <Rectangle Width="430" Height="430" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/images/diego.png" Margin="0 20 0 15"/>
+                                <RichTextBox  FontSize="19" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
+                                    <Paragraph>
+                                        Ingeniero en Electrónica y Telecomunicaciones, magíster en Telemática de la Universidad del Cauca y Ph.D. en Ciencias Biomédicas, 
+                                        Área Informática para la Salud, de la Universidad de Regensburg (Alemania). Ha realizado estancias postdoctorales de investigación 
+                                        en esta misma institución, en la Universidad de Toronto (Canadá) y en la Escuela de Salud Pública de la Universidad de Harvard, entre 
+                                        otras instituciones.
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>
+                        </Canvas>
+                    </StackPanel>
+
+                </phone:PivotItem>
+                <!--Fin CreaTIC-->
+
+            </phone:Pivot>
+        </Grid>
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
