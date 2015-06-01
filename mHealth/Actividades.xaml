@@ -49,12 +49,12 @@
                     </phone:PivotItem.Header>
                     
 
-                    <StackPanel Margin="0 20 0 0">
+                    <StackPanel Margin="0 10 0 0">
                         
                         <TextBlock Text="3 Días - Junio 8,9,10" HorizontalAlignment="Center" FontSize="44" FontWeight="SemiBold" />
                         
                         <Canvas  Margin="0 30 0 0">
-                            <Rectangle Width="430" Height="330" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
+                            <Rectangle Width="430" Height="320" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
                             <StackPanel Orientation="Vertical">
                                 <Image Source="/images/entrenamiento.png" Margin="0 20 0 10"/>
                                 <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
@@ -62,6 +62,7 @@
                                         Programa integral e intensivo para los participantes, donde aprenderán 
                                         sobre los principales problemas en salud, acercándolos a una visión 
                                         clínica para orientarlos en el diseño e implementación efectiva soluciones móviles.
+                                        
                                     </Paragraph>
                                 </RichTextBox>
                             </StackPanel>
@@ -79,21 +80,22 @@
                     </phone:PivotItem.Header>
                     
 
-                    <StackPanel Margin="0 0 0 0">
+                    <StackPanel Margin="0 -10 0 0">
                         
                         <TextBlock Text="2 Días - Junio 13,14" HorizontalAlignment="Center" FontSize="44" FontWeight="SemiBold" />
                         
-                        <Canvas  Margin="0 15 0 0">
+                        <Canvas  Margin="0 10 0 0">
                             <Rectangle Width="430" Height="380" Fill="Black" Opacity="0.6" Canvas.Top="0"/>
                             <StackPanel Orientation="Vertical">
-                                <Image Source="/images/hackaton.png" Margin="0 20 0 10"/>
+                                <Image Source="/images/hackaton.png" Margin="0 12 0 10"/>
                                 <RichTextBox Canvas.Top="50" FontSize="23" FontWeight="Light" Foreground="White" TextAlignment = "justify"  IsReadOnly = "True" Width="430">
                                     <Paragraph>
                                         Lugar de encuentro donde los participantes son reunidos con médicos
                                         locales para compartir ideas e innovar, aplicando inmediatamente los 
                                         conceptos y lecciones en proyectos actuales con equipos multidisciplinarios 
-                                        para desarrollar prototipos rápidos y resolver problemas reales.</Paragraph>
-                                </RichTextBox>
+                                        para desarrollar prototipos rápidos y resolver problemas reales.</Paragraph>                                    
+                                </RichTextBox>                             
+
                             </StackPanel>
                         </Canvas>
                     </StackPanel>

@@ -18,39 +18,40 @@ using Microsoft.Phone.Maps.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media;
+using TestTwitter.Net;
+using mHealth.Models;
 
 
 namespace mHealth
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class MainPage : PhoneApplicationPage, TwitterClient.TwitterClientI
     {
+        DataModel dataM;
+
+        //TOKENS
+        String consumerKey = "nshMf9JK3d4ggXitEHsY89RHx";
+        String consumerSecret = "350JARBf0l1Mmcb5I2y93HY8EvBasIQmGPZvsbJqZk7DUx2srj";
+        String accessToken = "3019866874-F8WLd1y5nwWJYJMZAwH4qBdXEUnQuukH62KMs1Q";
+        String accesstokenSecret = "XJBcVG6Dmf4gxSCAVhGgBAF8imoaHJJHbJEWul902hEkA";
+        String verifier = "uw7NjWHT6OJ1MpJOXsHfNxoAhPKpgI8BlYDhxEjIBY";
+
+        //Twitter Api
+        const String screenName = "ClusterCreaTIC";
+        const String count = "30";
+
+        TwitterClient twitter;
+
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            twitter = new TwitterClient() { ConsumerKey = consumerKey, ConsumerSecret = consumerSecret, AccessToken = accessToken, AccessTokenSecret = accesstokenSecret, OAuthVerifier = verifier };
+            
             //CreatePushPins();
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
             
-
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
         }
-              
-        private void IrPlatinium(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Sponsors.xaml?item=2", UriKind.Relative));
-        }
-
-        private void IrGolden(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Sponsors.xaml?item=1", UriKind.Relative));
-        }
-
-        private void IrSilver(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Sponsors.xaml?item=0", UriKind.Relative));
-        }
-
+        
 
         //Metodo para traer tweets
         void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -58,21 +59,7 @@ namespace mHealth
 
             if (NetworkInterface.GetIsNetworkAvailable())
             {
-                //Obtain keys by registering your app on https://dev.twitter.com/apps
-                //                                 costumer key             ,   costumer key secret
-                var service = new TwitterService("YXO8K2jFXbiKyLNDdn7ydFRPU", "VkVSDQ44Z9oJUm2PLHUJl9OW3y30J5xNjwlrLW4Bzp0MNta68S");
-                service.AuthenticateWith("3170504927-kcmyI4GV9ZMUvU9sYxJR6xoXHthE6DlmUsGVdiI", "EEeTKnuc5VwYIi6vygKu7WVznItuavm5G6lBY2CXwkfkO");
-                //ScreenName is the profile name of the twitter user.
-                service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions() { ScreenName = "ClusterCreaTic" }, (ts, rep) =>
-                {
-                    if (rep.StatusCode == HttpStatusCode.OK)
-                    {
-
-                        ObservableCollection<TwitterStatus> data = new ObservableCollection<TwitterStatus>(ts); 
-                        //bind
-                        this.Dispatcher.BeginInvoke(() => { tweetList.ItemsSource = data; });
-                    }
-                });
+                twitter.getTweets(screenName, count, this);
             }
             else
             {
@@ -181,6 +168,71 @@ namespace mHealth
             wbt.Show();
         }
 
+        private void irEric(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Expertos.xaml?item=1", UriKind.Relative));
+
+        }
+
+        private void irKenneth(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Expertos.xaml?item=0", UriKind.Relative));
+
+        }
+
+        private void irJuan(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Expertos.xaml?item=2", UriKind.Relative));
+
+        }
+
+        private void irDiego(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Expertos.xaml?item=3", UriKind.Relative));
+
+        }
+
+        private void goUnicauca(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("http://unicauca.edu.com", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+
+        }
+
+        private void goAcopi(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("http://www.acopicauca.org.co/", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+
+        }
+
+        private void goSusana(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("http://www.hosusana.gov.co/", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+
+        }
+
+        private void goSanJose(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var wbt = new WebBrowserTask();
+            Uri myUri = new Uri("http://www.hospitalsanjose.gov.co/", UriKind.Absolute);
+            wbt.Uri = myUri;
+            wbt.Show();
+
+        }
+
+        private void irPremios(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Premios.xaml", UriKind.Relative));
+        }
+
         //private void CreatePushPins()
         //{
 
@@ -214,7 +266,17 @@ namespace mHealth
         //    MyMap.Layers.Add(layer);
 
         //}
-        
-       
+
+
+
+        public void userTweets(List<TestTwitter.Models.Tweet> tweets)
+        {
+            dataM = Application.Current.Resources["dataModel"] as DataModel;
+
+            for (int i = 0; i < tweets.Count; i++)
+            {
+                dataM.Data.Add(tweets.ElementAt(i));
+            }
+        }
     }
 }

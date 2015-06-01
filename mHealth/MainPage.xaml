@@ -57,10 +57,11 @@
                             </Grid.RowDefinitions>
 
                             <StackPanel Grid.Row="0" Orientation="Horizontal" >
-                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="50 0 0 0" Tap="goCsterPage"/>
-                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="20 0 00 0" Tap="goMicrosoftPage" />
-                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="20 0 0 0" Tap="goGobernacionPage"/>
-                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="35 0 20 0" Tap="goNucleoInovacionPage"/>
+                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="45 0 0 0" Tap="goCsterPage"/>
+                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="0 0 0 0" Tap="goMicrosoftPage"/>
+                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="0 0 0 0" Tap="goGobernacionPage"/>
+                                <Image Source="/Images/Sponsor/unicauca.png" Height="50" Margin="20 0 0 0" Tap="goUnicauca" />
+                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="15 0 20 0" Tap="goNucleoInovacionPage"/>
                             </StackPanel>
                         </Grid>
 
@@ -166,8 +167,68 @@
 
             </phone:PanoramaItem>
             <!--Fin Información-->
+            
+            <!--Inicio Expertos-->
+            <phone:PanoramaItem Margin="0 -40">
+                <phone:PanoramaItem.Header>
+                    Expertos
+                </phone:PanoramaItem.Header>
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="#FF3300"/>
+                </phone:PanoramaItem.Foreground>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
 
-            <!--Inicio Noticias-->
+                    <!--Inicio Etapas-->
+                    <Canvas Grid.Row="0" Grid.Column="0"  Margin="10 0 0 0" >
+                        <Rectangle Fill="Black" Height="210" Width="200" Opacity="0.65" Canvas.ZIndex="0"/>
+                        <StackPanel Canvas.Left="35" Canvas.Top="10">
+                            <Image Source="/images/keneth.png" Height="130"  Margin="0 15 0 8 " Tap="irKenneth" />
+                            <TextBlock Text="Kenneth Paik" FontWeight="SemiBold" Margin="-10 0 0 0" Tap="irKenneth" FontSize="24" TextAlignment="Center"  Foreground="White"/>
+                        </StackPanel>
+                    </Canvas>
+
+
+                    <Canvas Grid.Row="0" Grid.Column="1"  Margin="10 0 0 0" >
+                        <Rectangle Fill="Black" Height="210" Width="200" Opacity="0.65" Canvas.ZIndex="0"/>
+                        <StackPanel Canvas.Left="35" Canvas.Top="10">
+                            <Image Source="/images/eric.png" Height="130" Margin="0 15"  Tap="irEric"/>
+                            <TextBlock Text="Eric Winkler" Foreground="White" FontWeight="SemiBold" Margin="0 -8"  FontSize="24"  TextAlignment="Center" Tap="irEric"/>
+                        </StackPanel>
+                    </Canvas>
+
+
+                    <Canvas Grid.Row="1" Grid.Column="0"  Margin="10 -30 0 0" >
+                        <Rectangle Fill="Black" Height="210" Width="200" Opacity="0.65" Canvas.ZIndex="0"/>
+                        <StackPanel Canvas.Left="22" Canvas.Top="10">
+                            <Image Source="/images/juan.png" Height="130" Margin="0 15" Tap="irJuan" />
+                            <TextBlock Text="Juan S. Osorio" Foreground="White" FontWeight="SemiBold" Margin="0 -5 0 0" FontSize="24" TextAlignment="Center" Tap="irJuan"/>
+                        </StackPanel>
+                    </Canvas>
+
+                    <Canvas Grid.Row="1" Grid.Column="1"  Margin="10 -30 0 0" >
+                        <Rectangle Fill="Black" Height="210" Width="200" Opacity="0.65" Canvas.ZIndex="0"/>
+                        <StackPanel Canvas.Left="5" Canvas.Top="10">
+                            <Image Source="/images/diego.png" Height="130" Margin="28 15" Tap="irDiego" />
+                            <TextBlock Text="Diego López" Foreground="White" FontWeight="SemiBold" Margin="0 -5 0 0" FontSize="24" TextAlignment="Center" Tap="irDiego"/>
+                        </StackPanel>
+                    </Canvas>
+
+                    <!--Fin Etapas-->
+                </Grid>
+            </phone:PanoramaItem>
+            <!--Fin Expertos-->
+            
+            <!--Inicio Noticias-->            
             <phone:PanoramaItem Margin="0 -40" >
                 <phone:PanoramaItem.Header>
                     Noticias
@@ -175,72 +236,28 @@
                 <phone:PanoramaItem.Foreground>
                     <SolidColorBrush Color="#FF3300"/>
                 </phone:PanoramaItem.Foreground>
-                <Grid>
-                    <Grid.Resources >
-                        <DataTemplate x:Key="tweetlist" >
-
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                                <Ellipse Height="60" Width="60" Margin="0 -70 0 0">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="{Binding User.ProfileImageUrl}"/>
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                                <StackPanel Orientation="Vertical" Margin="20 0 0 0">
-                                    <TextBlock Text="{Binding User.ScreenName}" FontWeight="Bold" FontSize="23" TextWrapping="Wrap"
-                                         Foreground="#FF3300" VerticalAlignment="Top"/>
-                                    
-                                    <TextBlock Text="{Binding CreatedDate}"  FontSize="20" TextWrapping="Wrap"
-                                         Foreground="#2CC76C"  VerticalAlignment="Top"/>
-
-                                    <TextBlock Text="{Binding Text}" Width="320" TextWrapping="Wrap" FontSize="20"  
-                                         VerticalAlignment="Top" FontWeight="Normal" Foreground="White"  />
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </Grid.Resources>
+                <Grid DataContext="{Binding Source={StaticResource dataModel}}">                   
 
                     <Rectangle Margin="0 -80 0 0" Width="440" Height="470"  Opacity="0.6" Fill="Black" />
-                    <phone:LongListSelector                    
-                            Margin="10,-75,0,0"
-                            ItemTemplate="{StaticResource tweetlist}"
-                            x:Name="tweetList"
-                            Width="430" Height="455">
+
+                    <phone:LongListSelector x:Name="listaCanciones" ItemsSource="{Binding Data}" Grid.Row="1">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Width="14" Height="50" Fill="#D1000F" Margin="0 0 0 0"/>
+                                    <Image Margin="5 0 0 0 " Source="{Binding UserProfileImageUrl}" />
+                                    <StackPanel Margin="10 9 0 0">
+                                        <TextBlock Text="{Binding UserName}" FontSize="25" FontWeight="SemiBold" Width="420"/>
+                                        <TextBlock Text="{Binding CreateAt}" Width="420"/>
+                                        <TextBlock Text="{Binding Text}" TextWrapping="Wrap" Width="420"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
                     </phone:LongListSelector>
 
-                </Grid>
-                                 
-                               <!--<Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                
-                                <Image Height="50" Width="50" Grid.Column="0" Grid.Row="0"
-                                            VerticalAlignment="Top" Margin="0,7,7,0"
-                                            Grid.RowSpan="2" Source="/Images/creatic.jpg">
-                                        </Image>
-                                    
-                                       <TextBlock Text="{Binding CreatedDate}" FontSize="25" Grid.Row="0"  Grid.Column="1"
-                                         Foreground="{StaticResource PhoneAccentBrush}" VerticalAlignment="Top"/>
 
-                                        <TextBlock Text="{Binding Text}" TextWrapping="Wrap" FontSize="20" Foreground="#860000"
-                                        Grid.Row="1" Grid.Column="1"
-                                        VerticalAlignment="Top"
-                                        />
-                                -->
-                               
-                          
-                               
-                    <!--inicio de twitter-->
-                        
-                       
-                        <!--fin de twitter-->
-                   
-                
+                </Grid>    
 
             </phone:PanoramaItem>
             <!--Fin Noticias-->
@@ -258,44 +275,51 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition />
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
                     <!--Inicio patrocinadores-->
-                    <Canvas Grid.Row="0" Margin="-10 60 0 0">
+                    <Canvas Grid.Row="0" Margin="-10 30 0 0">
                         <Rectangle Fill="White" Opacity="0.9" Width="395" Height="65" Canvas.Left="30" Canvas.Top="-25" Canvas.ZIndex="0"/>
                         <Grid Canvas.Top="-20">
                             <Grid.RowDefinitions>
                                 <RowDefinition />
                                 <RowDefinition />
+                                <RowDefinition />
                             </Grid.RowDefinitions>
 
                             <StackPanel Grid.Row="0" Orientation="Horizontal" >
-                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="50 0 0 0" Tap="goCsterPage"/>
-                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="20 0 00 0" Tap="goMicrosoftPage"/>
-                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="20 0 0 0" Tap="goGobernacionPage"/>
-                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="35 0 20 0" Tap="goNucleoInovacionPage"/>
+                                <Image Source="/Images/Sponsor/cluster_logo.png" Height="50" Margin="45 0 0 0" Tap="goCsterPage"/>
+                                <Image Source="/Images/Sponsor/microsoft_logo.png" Height="50" Margin="0 0 0 0" Tap="goMicrosoftPage"/>
+                                <Image Source="/Images/Sponsor/cauca_logo.png" Height="50" Margin="0 0 0 0" Tap="goGobernacionPage"/>
+                                <Image Source="/Images/Sponsor/unicauca.png" Height="50" Margin="20 0 0 0" Tap="goUnicauca"/>
+                                <Image Source="/Images/Sponsor/nucleosin_logo.png" Height="50" Margin="15 0 20 0" Tap="goNucleoInovacionPage"/>
                             </StackPanel>
                         </Grid>
                     </Canvas>
                     <!--Fin Patrocinadores-->
                     
                     <!--Inicio se patrocinador-->
-                    <Canvas Grid.Row="2" Margin="10 130 0 0">
+                    <Canvas Grid.Row="1" Margin="10 90 0 0">
                         <Rectangle Fill="Black" Opacity="0.55" Height="200" Width="420"/>
-                        <StackPanel Orientation="Vertical" Canvas.Left="23" Canvas.Top="10">
-                            <TextBlock  Foreground="#FF3300" FontWeight="Normal" Text="¡SE PATROCINADOR!" FontSize="40" TextAlignment="Center"/>
-                            <Grid  Margin="0 20 0 0">
+                        <StackPanel Orientation="Vertical" Canvas.Left="23" Canvas.Top="0">
+                            <TextBlock  Foreground="#FF3300" FontWeight="Normal" Text="Aliados" FontSize="40" TextAlignment="Center"/>
+                            <Grid  Margin="0 10 0 0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="0" Source="/Images/Platinium.png" Width="120" Tap="IrPlatinium" Margin="0 0 10 0"/>
-                                <Image Grid.Column="1" Source="/Images/Golden.png" Width="120" Tap="IrGolden" Margin="0 0 10 0"/>
-                                <Image Grid.Column="2" Source="/Images/Silver.png" Width="120" Tap="IrSilver"/>
+                                <Image Grid.Column="0" Source="/Images/Sponsor/acopi.png" Width="120" Height="120" Margin="0 0 10 0" Tap="goAcopi" />
+                                <Image Grid.Column="1" Source="/Images/Sponsor/susana.png" Width="120" Height="120" Margin="0 0 10 0" Tap="goSusana" />
+                                <Image Grid.Column="2" Source="/Images/Sponsor/sj.png" Width="120" Tap="goSanJose" />
                             </Grid>
                         </StackPanel>
+                    </Canvas>
+
+                    <Canvas Grid.Row="2" Margin="10 220 0 0">
+                        <Rectangle Fill="Black" Opacity="0.55" Height="80" Width="420"/>
+                        <TextBlock  Foreground="#FF3300" FontWeight="Normal" Text="¡Conoce los premios!" FontSize="40" TextAlignment="Center" Canvas.Left="27" Canvas.Top="10" Tap="irPremios" />
                     </Canvas>
                     <!--Fin se patrocinador-->
                 </Grid>

@@ -97,9 +97,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Expertos.xaml.cs">
+      <DependentUpon>Expertos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Models\Tweet.cs" />
+    <Compile Include="Net\TwitterClient.cs" />
+    <Compile Include="Premios.xaml.cs">
+      <DependentUpon>Premios.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
@@ -110,6 +119,7 @@
     <Compile Include="Sponsors.xaml.cs">
       <DependentUpon>Sponsors.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\OAuthUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -120,7 +130,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Expertos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Premios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,11 +189,15 @@
     </Content>
     <Content Include="Images\creatic.jpg" />
     <Content Include="Images\cursosana.png" />
+    <Content Include="Images\diego.png" />
     <Content Include="Images\entrenamiento.png" />
+    <Content Include="Images\eric.png" />
     <Content Include="Images\face.jpg.png" />
     <Content Include="Images\Golden.png" />
     <Content Include="Images\hackaton.png" />
     <Content Include="Images\incubadora.png" />
+    <Content Include="Images\juan.png" />
+    <Content Include="Images\keneth.png" />
     <Content Include="Images\mac-1.jpg" />
     <Content Include="Images\mac.jpg" />
     <Content Include="Images\mapa.PNG" />
@@ -184,11 +206,15 @@
     <Content Include="Images\puntero1.png" />
     <Content Include="Images\sana-logo.png" />
     <Content Include="Images\Silver.png" />
+    <Content Include="Images\Sponsor\acopi.png" />
     <Content Include="Images\Sponsor\cauca_logo.png" />
     <Content Include="Images\Sponsor\cluster_logo.png" />
     <Content Include="Images\logohacka.png" />
     <Content Include="Images\Sponsor\microsoft_logo.png" />
     <Content Include="Images\Sponsor\nucleosin_logo.png" />
+    <Content Include="Images\Sponsor\sj.png" />
+    <Content Include="Images\Sponsor\susana.png" />
+    <Content Include="Images\Sponsor\unicauca.png" />
     <Content Include="Images\step1.png" />
     <Content Include="Images\step2.png" />
     <Content Include="Images\step3.png" />
@@ -216,6 +242,15 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="TweetSharp.WindowsPhone">
       <HintPath>..\packages\TweetSharp.WindowsPhone.2.4.1\lib\wp80\TweetSharp.WindowsPhone.dll</HintPath>
     </Reference>
@@ -230,4 +265,9 @@
   </Target>
   -->
   <ProjectExtensions />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
 </Project>
